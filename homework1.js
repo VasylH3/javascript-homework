@@ -1,56 +1,102 @@
 // 'number' + 3 + 3
-console.log('number' + 3 + 3); // 'number33'
+// 'number' + 3 → конкатенація → 'number3'
+// 'number3' + 3 → знову конкатенація → 'number33'
+// Результат: 'number33'
 
 // null + 3
-console.log(null + 3); // 3
+// null → 0 (автоматичне приведення до числа)
+// 0 + 3 = 3
+// Результат: 3
 
 // 5 && "qwerty"
-console.log(5 && "qwerty"); // "qwerty"
+// 5 — truthy → перевіряємо далі
+// "qwerty" — також truthy → повертається останнє: "qwerty"
+// Результат: "qwerty"
 
 // +'40' + +'2' + "hillel"
-console.log(+'40' + +'2' + "hillel"); // "42hillel"
+// +'40' → 40 (унарний плюс: рядок у число)
+// +'2' → 2
+// 40 + 2 = 42
+// 42 + "hillel" → число + рядок = конкатенація → "42hillel"
+// Результат: "42hillel"
 
 // '10' - 5 === 6
-console.log('10' - 5 === 6); // false
+// '10' → 10 (рядок у число)
+// 10 - 5 = 5
+// 5 === 6 → false
+// Результат: false
 
 // true + false
-console.log(true + false); // 1
+// true → 1, false → 0
+// 1 + 0 = 1
+// Результат: 1
 
 // '4px' - 3
-console.log('4px' - 3); // NaN
+// '4px' → NaN (не можна перетворити у число)
+// NaN - 3 = NaN
+// Результат: NaN
 
 // '4' - 3
-console.log('4' - 3); // 1
+// '4' → 4 (рядок у число)
+// 4 - 3 = 1
+// Результат: 1
 
 // '6' + 3 ** 0
-console.log('6' + 3 ** 0); // "61"
+// 3 ** 0 = 1
+// '6' + 1 → рядок + число = "61"
+// Результат: "61"
 
 // 12 / '6'
-console.log(12 / '6'); // 2
+// '6' → 6 (рядок у число)
+// 12 / 6 = 2
+// Результат: 2
 
 // '10' + (5 === 6)
-console.log('10' + (5 === 6)); // "10false"
+// 5 === 6 → false
+// '10' + false → рядок + булеве → конкатенація: "10false"
+// Результат: "10false"
 
 // null == ''
-console.log(null == ''); // false
+// null == undefined → true
+// null == '' → false (різні типи)
+// Результат: false
 
 // 3 ** (9 / 3)
-console.log(3 ** (9 / 3)); // 27
+// 9 / 3 = 3
+// 3 ** 3 = 27
+// Результат: 27
 
 // !!'false' == !!'true'
-console.log(!!'false' == !!'true'); // true
+// 'false' → true, 'true' → true (непорожні рядки → truthy)
+// !!'false' → true, !!'true' → true
+// true == true → true
+// Результат: true
 
 // 0 || '0' && 1
-console.log(0 || '0' && 1); // 1
+// '0' && 1 → 1 (обидва truthy → повертається 1)
+// 0 || 1 → 1
+// Результат: 1
 
 // (+null == false) < 1
-console.log((+null == false) < 1); // true
+// +null → 0, false → 0
+// 0 == 0 → true
+// true → 1 → 1 < 1 → false
+// Але насправді: true < 1 → false (бо true → 1)
+// Результат: false
 
 // false && true || true
-console.log(false && true || true); // true
+// false && true → false
+// false || true → true
+// Результат: true
 
 // false && (false || true)
-console.log(false && (false || true)); // false
+// (false || true) → true
+// false && true → false
+// Результат: false
 
 // (+null == false) < 1 ** 5
-console.log((+null == false) < 1 ** 5); // true
+// +null → 0, false → 0
+// 0 == 0 → true
+// 1 ** 5 = 1 → true < 1 → false
+// Результат: false
+
